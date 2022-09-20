@@ -1,0 +1,41 @@
+<div class="col-md-6 offset-md-3">
+    
+    <form (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+            <label >ID</label>
+            <input type="text" name="id" id="id" class="form-control" [(ngModel)]="voter.id">
+        </div>
+        <div class="form-group">
+            <label >Name</label>
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="voter.name">
+        </div>
+
+        <div class="form-group">
+            <p>Gender</p>
+            <div >
+                <label class="inline control">Male</label>
+                <input type="radio" name="gender" id="gender" value="Male"  [(ngModel)]="voter.gender">
+                <label class="inline control">Female</label>
+                <input type="radio" name="gender" id="gender" value="Female" [(ngModel)]="voter.gender">
+            </div>
+        </div>
+        <div class="form-group">
+            <select name="state" id="state" (change)="onSelect($event)" [(ngModel)]="voter.state">
+                <option>Select State</option>
+                <option *ngFor="let states of state" [value]="states.nameState" class="form-control">{{states.nameState}}</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <select name="city" id="city" [(ngModel)]="voter.city">
+                <option>Select City</option>
+                <option *ngFor="let cities of city" class="form-control">{{cities.name}}</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+        <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+    </form>
+    </div>

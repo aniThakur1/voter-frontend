@@ -1,0 +1,22 @@
+<h2>Vehicle List</h2>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>State</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody *ngIf = "voter">
+        <tr *ngFor="let voter of voter"  >
+            <td>{{voter.id}}</td>
+            <td>{{voter.name}}</td>
+            <td>{{voter.gender}}</td>
+            <td>{{voter.state}}</td>
+            <td>{{voter.city}}</td>
+        </tr>
+    </tbody>
+</table>
+
